@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demon Slayer — Fan</title>
+  <meta name="description" content="Site promocional estilo Demon Slayer — versão de exemplo em HTML/CSS/JS." />
+  <link rel="stylesheet" href="stylee.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="indexx.html">Kimetsu no Yaiba</a>
+
+      </nav>
+      <button class="btn-burger" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="inner hero-content">
+        <div class="hero-text">
+          <h1 class="h1">Respire fundo. A lâmina vai brilhar.</h1>
+          <p>Explore a história, personagens e momentos inesquecíveis de Demon Slayer — versão demonstrativa.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#personagens">Ver Personagens</a>
+            <a class="btn ghost" href="#loja">Ir para Loja</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <!-- coloque uma imagem grande do protagonista em assets/hero.png -->
+          <img src="tnk.jpg" style="border-radius: 0px;" alt="Arte principal - Demon Slayer" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section class="section" id="historia">
+      <div class="inner">
+        <h2>História</h2>
+        <div class="grid-2">
+          <div>
+            <p>
+              Uma breve sinopse exemplo: Tanjiro, um jovem gentil que se torna caçador de demônios após uma tragédia
+              familiar,
+              embarca em uma jornada para restaurar sua irmã e vingar sua família. Este site é um exemplo estático de
+              layout.
+            </p>
+            <ul class="facts">
+              <li><strong>Autor:</strong> Koyoharu Gotouge (exemplo)</li>
+              <li><strong>Gênero:</strong> Ação, Fantasia, Drama</li>
+              <li><strong>Origem:</strong> Mangá / Anime</li>
+            </ul>
+             <br>
+              
+            <a class="btn" href="#noticias">Últimas Notícias</a>
+          </div>
+          <br>
+          <div class="card card-highlight">
+            <h3>Trailer Oficial</h3>
+            <div class="video-wrapper">
+             
+              <!-- troque o src pelo link real do trailer se quiser -->
+             <iframe width="947" height="541" src="https://www.youtube.com/embed/3UiP4GwWNv0" title="Demon Slayer: Kimetsu no Yaiba Castelo Infinito | Trailer Dublado" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- PERSONAGENS -->
+    <section class="section dark" id="personagens">
+      <div class="inner">
+        <h2>Personagens principais</h2>
+        <p class="subtitle">Clique em um personagem para ver detalhes</p>
+
+        <div class="cards-grid">
+          <!-- Replique este bloco para adicionar mais personagens -->
+          <article class="person-card" tabindex="0" data-name="Tanjiro" data-role="Protagonista"
+            data-desc="Caçador de demônios com senso de justiça.">
+            <div class="thumb">
+              <img src="tanjiro-kamado-kimetsu-no-yaiba-anime-uhdpaper.com-4K-mobile-3.766.jpg" alt="Tanjiro" loading="lazy" />
+            </div>
+            <div class="meta">
+              <h3 class="h3334">Tanjiro</h3>
+              <p>Protagonista</p>
+            </div>
+          </article>
+
+          <article class="person-card" tabindex="0" data-name="Nezuko" data-role="Irmã"
+            data-desc="Irmã de Tanjiro transformada em demônio, mas com forte ligação humana.">
+            <div class="thumb">
+              <img src="nezuko.jpg" alt="Nezuko" loading="lazy" />
+            </div>
+            <div class="meta">
+              <h3 class="h3334">Nezuko</h3>
+              <p>Irmã</p>
+            </div>
+          </article>
+
+          <article class="person-card" tabindex="0" data-name="Zenitsu" data-role="Companheiro"
+            data-desc="Medroso na maior parte do tempo, revela força extraordinária em sono profundo.">
+            <div class="thumb">
+              <img src="zenitsu.jpg" alt="Zenitsu" loading="lazy" />
+            </div>
+            <div class="meta">
+              <h3 class="h3334">Zenitsu</h3>
+              <p>Companheiro</p>
+            </div>
+          </article>
+
+          <article class="person-card" tabindex="0" data-name="Inosuke" data-role="Companheiro"
+            data-desc="Bruto, selvagem e com máscara de porco. Excelente lutador.">
+            <div class="thumb">
+              <img src="inosuke.jpg" alt="Inosuke" loading="lazy" />
+            </div>
+            <div class="meta">
+              <h3 class="h3334">Inosuke</h3>
+              <p>Companheiro</p>
+            </div>
+          </article>
+        </div>
+
+        <div id="person-modal" class="modal" aria-hidden="true">
+          <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="Fechar">✕</button>
+            <div class="modal-body">
+              <img src="assets/placeholder.png" alt="" id="modal-img" />
+              <div class="modal-meta">
+                <h3 id="modal-title">Nome</h3>
+                <p id="modal-role"></p>
+                <p id="modal-desc"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- LOJA EXEMPLO -->
+    <section class="section dark" id="loja">
+      <div class="inner">
+        <h2>Loja (exemplo)</h2>
+        <p class="subtitle">Camisetas, máscaras e colecionáveis — mockup de vitrine</p>
+
+        <div class="shop-grid">
+          <article class="product">
+            <img src="camisatanjiro.jpg" alt="Camiseta Tanjiro" loading="lazy" />
+            <h3>Camiseta Tanjiro</h3>
+            <p class="price">R$ 79,90</p>
+            <button class="btn add-cart" data-product="Camiseta Tanjiro">Adicionar ao carrinho</button>
+          </article>
+
+          <article class="product">
+            <img src="mascaradoinosuke.jpg" alt="Máscara Inosuke" loading="lazy" />
+            <h3>Máscara Inosuke</h3>
+            <p class="price">R$ 119,90</p>
+            <button class="btn add-cart" data-product="Máscara Inosuke">Adicionar ao carrinho</button>
+          </article>
+
+          <article class="product">
+            <img src="camisahasghuras.jpg" alt="Camiseta Hashira" loading="lazy" />
+            <h3>Camiseta Hashira</h3>
+            <p class="price">R$ 89,90</p>
+            <button class="btn add-cart" data-product="Camiseta Hashira">Adicionar ao carrinho</button>
+          </article>
+        </div>
+
+        <div class="cart-banner" aria-live="polite" id="cart-banner" hidden>
+          <p id="cart-text"></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NOTÍCIAS -->
+
+
+
+
+<section class="noticias" id="noticias">
+  <h2>Utimas Notícias</h2>
+
+  <div class="carrossel-scroll">
+    <div class="noticia">
+      <img src="hashiras2.jpg" alt="Hashiras reunidos">
+      <div class="info">
+        <h3>Os Hashiras se Reúnem Novamente!</h3>
+        <p>Após o aparecimento de um novo inimigo, os Pilares se preparam para mais uma batalha épica.</p>
+      </div>
+    </div>
+
+    <div class="noticia">
+      <img src="tn.jpg" alt="Tanjiro e Nezuko">
+      <div class="info">
+        <h3>Tanjiro e Nezuko: o Elo Inquebrável</h3>
+        <p>Os irmãos Kamado continuam sua jornada para quebrar a maldição demoníaca e proteger uns aos outros.</p>
+      </div>
+    </div>
+
+    <div class="noticia">
+      <img src="muzannnnnnnnn.jpg" alt="Muzan Kibutsuji">
+      <div class="info">
+        <h3>Muzan Kibutsuji Retorna das Sombras</h3>
+        <p>O senhor dos demônios ressurge mais poderoso, prometendo destruir a Corporação dos Caçadores.</p>
+      </div>
+    </div>
+
+    <div class="noticia">
+      <img src="is][.jpg" alt="Inosuke e Zenitsu">
+      <div class="info">
+        <h3>Inosuke e Zenitsu em nova missão!</h3>
+        <p>A dupla retorna com uma mistura de ação e comédia em uma nova investigação demoníaca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  
+
+  <footer class="site-footer">
+
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> — Demon Slayer (fan / demo). Desenvolvido por você.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

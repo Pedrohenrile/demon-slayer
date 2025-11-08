@@ -1,0 +1,856 @@
+/* styles.css — reset simples + variáveis */
+:root{
+  --bg:#0b0b10;
+  --surface:#0f1115;
+  --muted:#9aa1a8;
+  --accent:#ff5c3c;
+  --accent-2:#ffd166;
+  --glass: rgba(255,255,255,0.04);
+  --radius:14px;
+  --max-width:1200px;
+  --gap:1.25rem;
+  --text:#e8eef2;
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+/* 🌐 Padrão — PCs e monitores grandes */
+body {
+  background-image: url('tengen-uzui-kimetsu-no-yaiba-4k-wallpaper-uhdpaper.com-897@1@e.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* 📱 Celulares e tablets */
+@media (max-width: 768px) {
+  body {
+    background-image: url('tengen-uzui.jpg');
+    background-size: cover;
+    background-position: center;
+   
+      background-attachment: fixed;
+  }
+}
+
+
+
+
+
+  h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px #ff0000,
+    0 0 20px #ffc933,
+    0 0 40px #ca22a0;
+  letter-spacing: 5px;
+  animation: breathing 3s ease-in-out infinite;
+  position: relative;
+}
+
+/* Efeito respirando (inspirado no "Breath Style") */
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 
+      0 0 10px #ff0000,
+      0 0 20px #333edd,
+      0 0 40px #ff5555;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 
+      0 0 20px #3059ca,
+      0 0 40px #ff5555,
+      0 0 80px #cabe12;
+  }
+}
+
+/* Efeito katana embaixo */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ffffff, #ff0000);
+  box-shadow: 0 0 20px #ff3333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 
+    0 0 10px #a11e50,
+    0 0 25px #af1b9b,
+    0 0 40px #ee28e4;
+  position: relative;
+  animation: breathing 3s ease-in-out infinite;
+}
+
+/* ✨ Aura vermelha respirando */
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 
+      0 0 10px #d8ad35,
+      0 0 25px #be3737,
+      0 0 40px #f51c1c;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 
+      0 0 20px #d15536,
+      0 0 40px #a51515,
+      0 0 80px #410a0a;
+  }
+}
+
+/* 🔥 Katana estilizada abaixo do texto */
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 4px;
+  background: linear-gradient(90deg, #fff4fd, #635b63, #8b2b0e);
+  box-shadow: 0 0 15px #fc4730;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.2rem;
+  color: #f5f5f5;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 700px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #dfce36;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.2);
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 💫 Efeito hover suave */
+p:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 50, 50, 0.4);
+  border-left-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* container */
+.inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:2rem;
+}
+
+/* HEADER */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:80;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(6,6,8,0.55), rgba(6,6,8,0.25));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.site-header .inner{
+  display:flex;align-items:center;gap:1rem;justify-content:space-between;
+  padding:1rem 2rem;
+}
+.brand{
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--text);
+  text-decoration:none;
+  font-size:1.125rem;
+}
+.main-nav{display:flex;gap:1rem}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.main-nav a:hover{color:var(--text)}
+
+/* burger for mobile */
+.btn-burger{
+  display:none;
+  background:none;border:0;padding:0;cursor:pointer;
+}
+.btn-burger span, .btn-burger span::before, .btn-burger span::after{
+  display:block;width:22px;height:2px;background:var(--text);border-radius:2px;position:relative;
+}
+.btn-burger span::before, .btn-burger span::after{content:"";position:absolute;left:0}
+.btn-burger span::before{top:-7px}
+.btn-burger span::after{top:7px}
+
+/* HERO */
+.hero{
+  display:block;
+  padding:6rem 0;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero p{
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #e8e8e8;
+  max-width: 700px;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 20px 30px;
+  border-left: 3px solid #ff4040;
+  background: rgba(197, 187, 187, 0.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 2s ease-in-out, glow 4s ease-in-out infinite;
+}
+
+/* brilho suave pulsando */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+    border-left-color: #ff4040;
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 80, 80, 0.4);
+    border-left-color: #ff7070;
+  }
+}
+
+/* animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* efeito de fumaça/energia */
+p::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 50, 50, 0.1), transparent 70%);
+  mix-blend-mode: screen;
+  animation: aura 6s infinite linear;
+  border-radius: 10px;
+}
+
+@keyframes aura {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+
+.facts{
+  color: white;
+}
+
+
+.card-highlight h3{
+color: white;
+  
+
+}
+
+
+
+
+
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(8,10,14,0.3), rgba(3,4,6,0.55));
+  pointer-events:none;
+}
+.hero-content{display:flex;align-items:center;gap:2rem;justify-content:space-between}
+.hero-text{max-width:54ch}
+
+
+.hero-actions{display:flex;gap:0.75rem}
+.btn{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#f8f8f5;border:0;padding:.75rem 1.1rem;border-radius:12px;font-weight:700;text-decoration:none;
+  box-shadow:0 8px 20px rgba(226, 217, 216, 0.15), var(--shadow);
+}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-art{
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hero-art:hover {
+  transform: scale(1.08);
+}
+
+/* 💫 Efeito de brilho ao redor */
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #ff0000,
+    #ff6600,
+    #ff0000,
+    #ff66cc,
+    #ff0000
+  );
+  animation: spin 6s linear infinite;
+  z-index: -1;
+}
+
+/* ✨ Imagem */
+.hero-art img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid rgba(0,0,0,0.7);
+  object-fit: cover;
+  position: relative;
+}
+
+/* 🌪️ Animação de rotação suave */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* floating animation */
+@keyframes float{
+  0%{transform:translateY(0) rotate(-2deg)}
+  50%{transform:translateY(-12px) rotate(2deg)}
+  100%{transform:translateY(0) rotate(-2deg)}
+}
+
+/* SECTIONS */
+.section{padding:3.5rem 0;background:transparent}
+.section.dark{background:linear-gradient(180deg, rgba(209, 198, 198, 0.01), rgba(0,0,0,0.02))}
+
+/* grid helpers */
+.grid-2{display:grid;grid-template-columns:1fr 420px;gap:var(--gap)}
+.card{background:var(--surface);padding:1rem;border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.card-highlight{display:flex;flex-direction:column;gap:1rem}
+
+/* video wrapper */
+.video-wrapper{position:relative;padding-top:56.25%}
+.video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:8px}
+
+/* CARDS GRID - PERSONAGENS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1.25rem}
+.person-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.03);
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.person-card:focus{outline:3px solid rgba(255,92,60,0.18)}
+.person-card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(2,6,23,0.6)}
+.person-card .thumb{height:220px;overflow:hidden}
+.person-card img{width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block}
+.person-card .meta{padding:0.8rem}
+
+
+
+
+
+
+
+.h3334 {
+  font-family: "Noto Serif JP", "Playfair Display", serif;
+  font-weight: 700;
+  color: #ffefe0;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 40px 0 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 18px rgba(255,120,80,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Traço estilo lâmina */
+.h3334::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #e84c3d, #ffb36b, #e84c3d);
+  border-radius: 3px;
+  box-shadow: 0 0 14px rgba(255,80,40,0.5);
+}
+
+/* Efeito "respiração" (leve pulsar) */
+@keyframes breathing {
+  0% { text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 18px rgba(255,120,80,0.2); transform: scale(1); }
+  50% { text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 22px rgba(255,140,90,0.4); transform: scale(1.03); }
+  100% { text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 18px rgba(255,120,80,0.2); transform: scale(1); }
+}
+.h3334:hover {
+  animation: breathing 2.5s ease-in-out infinite;
+  cursor: default;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .h3334-h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .h3334::after {
+    width: 80px;
+  }
+}
+
+
+
+
+.person-card p{
+
+
+
+
+
+ font-family: "Noto Serif JP", "Playfair Display", serif;
+  display: block;
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 20px 26px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #f6efe6;
+  background: linear-gradient(180deg, rgba(8,10,12,0.6), rgba(20,12,10,0.55));
+  border-left: 6px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 30px rgba(2,2,2,0.6), inset 0 -3px 8px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.6), 0 2px 18px rgba(0,0,0,0.4);
+  letter-spacing: 0.3px;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+/* Kanji grande e semitransparente (decorativo) */
+.demon-p::before{
+  content: "鬼";
+  position: absolute;
+  right: 16px;
+  top: -6px;
+  font-size: 5.2rem;
+  line-height: 1;
+  opacity: 0.06;
+  transform: rotate(-8deg);
+  pointer-events: none;
+  font-family: "Noto Serif JP", serif;
+}
+
+/* Lâmina / detalhe dourado fino */
+.demon-p::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,200,80,0.08) 40%, rgba(0,0,0,0.08));
+  mix-blend-mode: overlay;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  pointer-events: none;
+}
+
+/* Pequena animação tipo brasa/centelha */
+@keyframes ember {
+  0% { box-shadow: 0 6px 30px rgba(2,2,2,0.6), inset 0 -3px 8px rgba(0,0,0,0.4); }
+  50% { box-shadow: 0 8px 36px rgba(10,6,6,0.65), inset 0 -2px 12px rgba(120,40,20,0.06); }
+  100% { box-shadow: 0 6px 30px rgba(2,2,2,0.6), inset 0 -3px 8px rgba(0,0,0,0.4); }
+}
+.demon-p:hover { animation: ember 2.2s ease-in-out infinite; }
+
+/* Responsividade: reduz tamanho em telas pequenas */
+@media (max-width: 480px){
+  .demon-p{
+    font-size: 1rem;
+    padding: 16px 18px;
+    border-radius: 8px;
+  }
+  .demon-p::before{
+    font-size: 3.2rem;
+    right: 8px;
+    top: 2px;
+  }
+}
+
+
+
+
+.person-card h3{
+  >
+.demon-h3 {
+  font-family: "Noto Serif JP", "Playfair Display", serif;
+  font-weight: 700;
+  color: #ffefe0;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 40px 0 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 18px rgba(255,120,80,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Traço estilo lâmina */
+.demon-h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #d3cac9, #f59a45, #5e5b5a);
+  border-radius: 3px;
+  box-shadow: 0 0 14px rgba(255,80,40,0.5);
+}
+
+/* Efeito "respiração" (leve pulsar) */
+@keyframes breathing {
+  0% { text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 18px rgba(255,120,80,0.2); transform: scale(1); }
+  50% { text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 22px rgba(255,140,90,0.4); transform: scale(1.03); }
+  100% { text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 18px rgba(255,120,80,0.2); transform: scale(1); }
+}
+.demon-h3:hover {
+  animation: breathing 2.5s ease-in-out infinite;
+  cursor: default;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .demon-h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .demon-h3::after {
+    width: 80px;
+  }
+} }
+
+
+
+
+
+
+
+
+
+
+
+/* SHOP GRID */
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.product{background:var(--glass);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.product img{width:100%;height:400px;object-fit:cover;border-radius:8px}
+.price{font-weight:800;margin:8px 0}
+.add-cart{width:100%;padding:.6rem;border-radius:10px;background:linear-gradient(90deg,#3b82f6,#06b6d4);border:0;color:white;cursor:pointer}
+
+.shop-grid h3{
+    font-family: "Oswald", "Noto Serif JP", sans-serif;
+  font-weight: 700;
+  color: #f8f8f8;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 40px 0 25px;
+  position: relative;
+  background: linear-gradient(90deg, #dbd9d9, #ffc371);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Linha luminosa abaixo (como a lâmina Nichirin) */
+.demon-shop-h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(90deg, #ece5e5, #d8bf9c, #585152);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Brilho ao passar o mouse */
+.demon-shop-h3:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(240, 239, 239, 0.7));
+  letter-spacing: 3px;
+}
+
+/* Efeito respirando (suave, elegante) */
+@keyframes breathe {
+  0% { text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+  50% { text-shadow: 0 3px 12px rgba(255,140,90,0.5); }
+  100% { text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+}
+.demon-shop-h3:hover {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* Responsivo para celular */
+@media (max-width: 480px) {
+  .demon-shop-h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .demon-shop-h3::after {
+    width: 90px;
+  }
+}
+
+
+
+
+
+
+
+
+/* NEWS */
+.news-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+.news-item{background:var(--surface);padding:1rem;border-radius:12px}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2rem;background:rgba(0,0,0,0.6);opacity:0;pointer-events:none;transition:opacity .18s ease}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-content{background:linear-gradient(180deg, rgba(12,14,17,0.9), rgba(8,9,11,0.98));border-radius:12px;padding:1rem;max-width:900px;width:100%;box-shadow:var(--shadow)}
+.modal-close{position:absolute;right:1.5rem;top:1.25rem;background:none;border:0;color:var(--muted);font-size:1.25rem}
+.modal-body{display:flex;gap:1rem;align-items:flex-start}
+.modal-body img{width:320px;height:320px;object-fit:cover;border-radius:10px}
+.modal-meta{flex:1}
+
+/* cart banner */
+.cart-banner{position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:12px 16px;border-radius:12px;color:#081018;font-weight:700;box-shadow:var(--shadow)}
+
+/* FOOTER */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:2rem 0 3rem;color:var(--muted)}
+.site-footer .inner{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-col{flex:1;min-width:180px}
+.footer-bottom{text-align:center;margin-top:1.25rem;color:var(--muted);font-size:.9rem}
+
+/* responsivo */
+@media (max-width:980px){
+  .grid-2{grid-template-columns:1fr}
+  .hero-content{flex-direction:column-reverse;gap:1rem}
+  .hero-art img{max-width:320px}
+  .main-nav{display:none}
+  .btn-burger{display:block}
+}
+
+
+
+
+.noticias {
+  padding: 70px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.noticias h2 {
+  font-size: 2.8em;
+  color: #f5f5f5;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #ffffff;
+  border-bottom: 3px solid #ffffff;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Carrossel com rolagem horizontal */
+.carrossel-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #202020 #000000;
+}
+
+/* Estilo dos cards */
+.noticia {
+  flex: 0 0 320px;
+  background: linear-gradient(145deg, #020202, #000000);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(212, 0, 0, 0.4);
+  border: 3px solid #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noticia:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #f1f1f1;
+}
+
+/* Imagens */
+.noticia img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 17px 17px 0 0;
+}
+
+/* Informações */
+.info {
+  padding: 15px;
+}
+
+.info h3 {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 0 0 5px rgba(255,0,0,0.3);
+}
+
+.info p {
+  font-size: 0.95em;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Scrollbar customizada */
+.carrossel-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.carrossel-scroll::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.carrossel-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #281dc4, #281ba5);
+  border-radius: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .noticia {
+    flex: 0 0 250px;
+  }
+  .noticias h2 {
+    font-size: 1.7em;
+  }
+}
